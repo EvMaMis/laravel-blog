@@ -323,7 +323,7 @@ return [
         [
             'text' => 'Публикации',
             'route' => 'admin.posts.index',
-            'icon' => 'fas fa-solid fa-sheet-plastic',
+            'icon' => 'fas fa-solid fa-scroll',
         ],
     ],
 
@@ -413,12 +413,12 @@ return [
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => 'path/to/summernote.js',
+                    'location' => 'vendor/summernote/summernote.min.js',
                 ],
                 [
                     'type' => 'css',
                     'asset' => true,
-                    'location' => 'path/to/summernote.css',
+                    'location' => 'vendor/summernote/summernote.min.css',
                 ],
             ],
         ],
