@@ -407,18 +407,28 @@ return [
                 ],
             ],
         ],
+        'BsCustomFileInput' => [
+            'active' => false,
+            'files' => [
+                [
+                    'type' => 'js',
+                    'asset' => true,
+                    'location' => 'vendor/bs-custom-file-input/bs-custom-file-input.js',
+                ],
+            ],
+        ],
         'summernote' => [
             'active' => true,
             'files' => [
                 [
                     'type' => 'js',
                     'asset' => true,
-                    'location' => 'vendor/summernote/summernote.min.js',
+                    'location' => 'vendor/summernote/summernote-bs5.js',
                 ],
                 [
                     'type' => 'css',
                     'asset' => true,
-                    'location' => 'vendor/summernote/summernote.min.css',
+                    'location' => 'vendor/summernote/summernote-bs5.css',
                 ],
             ],
         ],
