@@ -18,7 +18,7 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="summernote" class="form-label">Some content</label>
+                <label for="summernote" class="form-label">Содержимое поста</label>
                 <textarea name="content" id="summernote">{{old('content')}}</textarea>
                 @error('content')
                 <div class="text-danger">{{$message}}</div>
