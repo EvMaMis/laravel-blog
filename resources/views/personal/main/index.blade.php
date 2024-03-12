@@ -5,11 +5,10 @@
 
 @section('content')
     <div class="d-flex justify-content-between">
-
-    <x-adminlte-small-box style="width:45%;" title="Понравившиеся посты" text="12" icon="fas fa-solid fa-heart"
+    <x-adminlte-small-box style="width:45%;" title="Понравившиеся посты" text="{{$data['count-likes']}}" icon="fas fa-solid fa-heart"
                           theme="danger" url="{{route('personal.likes.index')}}" url-text="Подробнее"/>
 
-    <x-adminlte-small-box style="width:45%;" title="Комментарии" text="123" icon="fas fa-solid fa-user"
+    <x-adminlte-small-box style="width:45%;" title="Комментарии" text="{{$data['count-comments']}}" icon="fas fa-solid fa-comment"
                           theme="purple" url="{{route('personal.comments.index')}}" url-text="Подробнее"/>
     </div>
 @endsection

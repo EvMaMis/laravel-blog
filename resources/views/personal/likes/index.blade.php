@@ -4,20 +4,32 @@
 @endsection
 
 @section('content')
-    <div class="d-flex justify-content-between">
-
-    <x-adminlte-small-box style="width:45%;" title="Публикации" text="" icon="fas fa-solid fa-scroll"
-                          theme="primary" url="{{route('admin.posts.index')}}" url-text="Подробнее"/>
-
-    <x-adminlte-small-box style="width:45%;" title="Пользователи" text="" icon="fas fa-solid fa-user"
-                          theme="purple" url="{{route('admin.users.index')}}" url-text="Подробнее"/>
-    </div>
-    <div class="d-flex justify-content-between">
-
-    <x-adminlte-small-box style="width: 45%;" title="Категории" text="" icon="fas fa-solid fa-list"
-                          theme="gray" url="{{route('admin.categories.index')}}" url-text="Подробнее"/>
-
-    <x-adminlte-small-box style="width: 45%;" title="Теги" text="" icon="fas fa-solid fa-tags"
-                          theme="danger" url="{{route('admin.tags.index')}}" url-text="Подробнее"/>
-    </div>
+    <table class="table col-12">
+        <thead>
+        <tr>
+            <th class="col-3">ID</th>
+            <th class="col-7">Название поста</th>
+            <th class="col-2 text-center" colspan="2">Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($posts as $post)
+            <tr>
+                <td class="col-3">{{$post->id}}</td>
+                <td class="col-7">{{$post->title}}</td>
+                <td class="col-1"><a href="{{route('admin.posts.show', $post)}}">
+                        <i class="text-center text-blue fas fa-solid fa-eye"></i></a></td>
+                <td class="col-1">
+                    <form action="{{route('personal.likes.destroy', $post)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" style="border:0; background:transparent;">
+                            <i class="text-center text-danger fas fa-solid fa-trash"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
 @endsection
