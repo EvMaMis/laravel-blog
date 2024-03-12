@@ -19,6 +19,20 @@
                 @error('email')
                 <div class="text-danger">{{$message}}</div>
                 @enderror
+                <div class="form-group">
+                    <label for="role_select">Выберите роль</label>
+                    <select name="role" id="role_select" class="form-control w-50">
+                        @foreach($roles as $id=>$role)
+                            <option value="{{$id}}"
+                                {{$id == $user->role ? 'selected' : ''}}
+                            >{{$role}}</option>
+                        @endforeach
+                    </select>
+
+                    @error('category_id')
+                    <div class="text-danger">{{$message}}</div>
+                    @enderror
+                </div>
                 <input type="submit" class="btn btn-success mt-3" value="Обновить пользователя">
             </div>
         </form>

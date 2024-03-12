@@ -3,9 +3,9 @@
 @section('content_header')
     <div class="col-12 d-flex align-items-center">
         <h1>{{$user->name}}</h1>
-        <a class="ml-2" href="{{route('admin.categories.edit', $user)}}">
+        <a class="ml-2" href="{{route('admin.users.edit', $user)}}">
             <i class="text-center text-green fa-solid fa-pen"></i></a>
-        <form action="{{route('admin.categories.destroy', $user)}}" method="POST">
+        <form action="{{route('admin.users.destroy', $user)}}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit" style="border:0; background:transparent;">

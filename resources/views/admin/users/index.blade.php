@@ -15,7 +15,7 @@
             <th class="col-1">ID</th>
             <th class="col-3">Имя пользователя</th>
             <th class="col-3">Адрес электронной почты</th>
-            <th class="col-3">Дата создания</th>
+            <th class="col-3">Роль</th>
             <th class="col-3 text-center" colspan="3">Действия</th>
         </tr>
         </thead>
@@ -25,7 +25,11 @@
                 <td class="col-1">{{$user->id}}</td>
                 <td class="col-3">{{$user->name}}</td>
                 <td class="col-3">{{$user->email}}</td>
-                <td class="col-3">{{$user->created_at}}</td>
+                <td class="col-3">
+                    @foreach($roles as $key=>$role)
+                        {{$key == $user->role ? $role : ''}}
+                    @endforeach
+                </td>
                 <td class="col-1"><a href="{{route('admin.users.show', $user)}}">
                         <i class="text-center text-blue fa-solid fa-eye"></i></a></td>
                 <td class="col-1"><a href="{{route('admin.users.edit', $user)}}">
