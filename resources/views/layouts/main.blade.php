@@ -32,6 +32,10 @@
                 <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#">Contact</a></li>
             </ul>
         </div>
+        <form action="{{route('logout')}}" method="POST">
+            @csrf
+            <input class="nav-item nav-link px-lg-3 py-3 py-lg-4" type="submit" value="Выйти">
+        </form>
     </div>
 </nav>
 <!-- Page Header-->
