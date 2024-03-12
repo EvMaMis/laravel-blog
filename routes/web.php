@@ -18,9 +18,24 @@ Route::group(['namespace' => 'App\\Http\\Controllers\\Main'], function () {
     Route::get('/', 'IndexController');
 });
 
+Route::group(['namespace' => 'App\\Http\\Controllers\\Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']]   , function () {
+    Route::group(['namespace' => 'Main'], function () {
+        Route::get('/', 'IndexController')->name('personal.main.index');
+    });
+    Route::group(['namespace' => 'Like', 'prefix' => 'likes'], function () {
+        Route::get('/', 'IndexController')->name('personal.likes.index');
+        Route::delete('/{post}', 'DestroyController')->name('personal.likes.destroy');
+    });
+    Route::group(['namespace' => 'Comment', 'prefix' => 'comments'], function () {
+        Route::get('/', 'IndexController')->name('personal.comments.index');
+        Route::get('/{comment}/edit', 'EditController')->name('personal.comments.edit');
+        Route::patch('/{comment}', 'UpdateController')->name('personal.comments.update');
+        Route::delete('/{comment}', 'DestroyController')->name('personal.comments.destroy');
+    });
+});
 Route::group(['namespace' => 'App\\Http\\Controllers\\Admin', 'prefix' => 'admin', 'middleware' => ['auth', 'admin', 'verified']]   , function () {
     Route::group(['namespace' => 'Main'], function () {
-        Route::get('/', 'IndexController');
+        Route::get('/', 'IndexController')->name('admin.index');
     });
 
     Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function () {

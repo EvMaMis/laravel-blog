@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Админ панель',
+    'title' => 'Панель управления',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Панель</b> управления',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -257,7 +257,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -297,8 +297,9 @@ return [
         // Navbar items:
         [
             'type' => 'navbar-search',
-            'text' => 'search',
+            'text' => 'Поиск',
             'topnav_right' => true,
+            'can' => 'admin'
         ],
         [
             'type' => 'fullscreen-widget',
@@ -308,28 +309,58 @@ return [
         // Sidebar items:
         [
             'type' => 'sidebar-menu-search',
-            'text' => 'search',
+            'text' => 'Поиск',
+            'can' => 'admin'
+
         ],
+        ['header' => 'Админ панель'],
         [
-            'text' => 'Категории',
-            'route' => 'admin.categories.index',
-            'icon' => 'fas fa-solid fa-list',
-        ],
-        [
-            'text' => 'Теги',
-            'route' => 'admin.tags.index',
-            'icon' => 'fas fa-solid fa-tags',
+            'text' => 'Главная',
+            'route' => 'admin.index',
+            'icon' => 'fas fa-solid fa-home',
+            'can' => 'admin',
         ],
         [
             'text' => 'Публикации',
             'route' => 'admin.posts.index',
             'icon' => 'fas fa-solid fa-scroll',
+            'can' => 'admin',
         ],
         [
             'text' => 'Пользователи',
             'route' => 'admin.users.index',
             'icon' => 'fas fa-solid fa-user',
+            'can' => 'admin',
         ],
+        [
+            'text' => 'Категории',
+            'route' => 'admin.categories.index',
+            'icon' => 'fas fa-solid fa-list',
+            'can' => 'admin',
+        ],
+        [
+            'text' => 'Теги',
+            'route' => 'admin.tags.index',
+            'icon' => 'fas fa-solid fa-tags',
+            'can' => 'admin',
+        ],
+        ['header' => 'Личный кабинет'],
+        [
+            'text' => 'Личный кабинет',
+            'route' => 'personal.main.index',
+            'icon' => 'fas fa-solid fa-home',
+        ],
+        [
+            'text' => 'Лайки',
+            'route' => 'personal.likes.index',
+            'icon' => 'fas fa-solid fa-heart',
+        ],
+        [
+            'text' => 'Комментарии',
+            'route' => 'personal.comments.index',
+            'icon' => 'fas fa-solid fa-comment',
+        ],
+
     ],
 
     /*

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Requests\Admin\User\StoreRequest;
 use App\Jobs\StoreUserJob;
+use Illuminate\Auth\Access\Gate;
 
 class StoreController extends BaseController
 {
