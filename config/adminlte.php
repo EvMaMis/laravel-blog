@@ -325,6 +325,11 @@ return [
             'route' => 'admin.posts.index',
             'icon' => 'fas fa-solid fa-scroll',
         ],
+        [
+            'text' => 'Пользователи',
+            'route' => 'admin.users.index',
+            'icon' => 'fas fa-solid fa-user',
+        ],
     ],
 
     /*

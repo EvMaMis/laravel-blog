@@ -32,4 +32,27 @@ class StoreRequest extends FormRequest
             'tag_ids.*' => 'nullable|integer|exists:tags,id'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Необходимо заполнить поле заголовка',
+            'title.string' => 'Поле не соответствует строчному типу данных',
+            'content.required' => 'Необходимо заполнить содержимое публикации',
+            'content.string' => 'Поле не соответствует строчному типу данных',
+            'preview_image.required' => 'Необходимо добавить изображение для превью',
+            'preview_image.min_width' => 'Изображение слишком маленького размера по ширине',
+            'preview_image.min_height' => 'Изображение слишком маленького размера по высоте',
+            'preview_image.dimensions' => 'Необходимо использовать изображение с разрешением сторон 16:9',
+            'main_image.required' => 'Необходимо добавить главное изображение',
+            'main_image.min_width' => 'Изображение слишком маленького размера по ширине',
+            'main_image.min_height' => 'Изображение слишком маленького размера по высоте',
+            'main_image.dimensions' => 'Необходимо использовать изображение с разрешением сторон 16:9',
+            'category_id.required' => 'Необходимо указать категорию публикации',
+            'category_id.integer' => 'ID категории должен быть числом',
+            'category_id.exists' => 'ID категории не существует в базе',
+            'tag_ids.array' => 'Теги должны быть в форме массива',
+
+        ];
+    }
 }

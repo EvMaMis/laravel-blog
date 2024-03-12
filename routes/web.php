@@ -17,12 +17,12 @@ Route::group(['namespace' => 'App\\Http\\Controllers\\Main'], function () {
     Route::get('/', 'IndexController');
 });
 
-Route::group(['namespace' => 'App\\Http\\Controllers\\Admin', 'prefix' => 'admin'], function() {
+Route::group(['namespace' => 'App\\Http\\Controllers\\Admin', 'prefix' => 'admin'], function () {
     Route::group(['namespace' => 'Main'], function () {
         Route::get('/', 'IndexController');
     });
 
-    Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function() {
+    Route::group(['namespace' => 'Category', 'prefix' => 'categories'], function () {
         Route::get('/', 'IndexController')->name('admin.categories.index');
         Route::get('/create', 'CreateController')->name('admin.categories.create');
         Route::post('/', 'StoreController')->name('admin.categories.store');
@@ -31,7 +31,7 @@ Route::group(['namespace' => 'App\\Http\\Controllers\\Admin', 'prefix' => 'admin
         Route::patch('/{category}', 'UpdateController')->name('admin.categories.update');
         Route::delete('/{category}', 'DestroyController')->name('admin.categories.destroy');
     });
-    Route::group(['namespace' => 'Tag', 'prefix' => 'tags'], function() {
+    Route::group(['namespace' => 'Tag', 'prefix' => 'tags'], function () {
         Route::get('/', 'IndexController')->name('admin.tags.index');
         Route::get('/create', 'CreateController')->name('admin.tags.create');
         Route::post('/', 'StoreController')->name('admin.tags.store');
@@ -40,7 +40,7 @@ Route::group(['namespace' => 'App\\Http\\Controllers\\Admin', 'prefix' => 'admin
         Route::patch('/{tag}', 'UpdateController')->name('admin.tags.update');
         Route::delete('/{tag}', 'DestroyController')->name('admin.tags.destroy');
     });
-    Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function() {
+    Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
         Route::get('/', 'IndexController')->name('admin.posts.index');
         Route::get('/create', 'CreateController')->name('admin.posts.create');
         Route::post('/', 'StoreController')->name('admin.posts.store');
@@ -48,6 +48,15 @@ Route::group(['namespace' => 'App\\Http\\Controllers\\Admin', 'prefix' => 'admin
         Route::get('/{post}/edit', 'EditController')->name('admin.posts.edit');
         Route::patch('/{post}', 'UpdateController')->name('admin.posts.update');
         Route::delete('/{post}', 'DestroyController')->name('admin.posts.destroy');
+    });
+    Route::group(['namespace' => 'User', 'prefix' => 'users'], function () {
+        Route::get('/', 'IndexController')->name('admin.users.index');
+        Route::get('/create', 'CreateController')->name('admin.users.create');
+        Route::post('/', 'StoreController')->name('admin.users.store');
+        Route::get('/{user}', 'ShowController')->name('admin.users.show');
+        Route::get('/{user}/edit', 'EditController')->name('admin.users.edit');
+        Route::patch('/{user}', 'UpdateController')->name('admin.users.update');
+        Route::delete('/{user}', 'DestroyController')->name('admin.users.destroy');
     });
 });
 
