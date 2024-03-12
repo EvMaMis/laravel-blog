@@ -7,7 +7,6 @@
     <link href="{{asset('assets/css/styles.css')}}" rel="stylesheet" />
     <title>Clean Blog - Start Bootstrap Theme</title>
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <script src="{{asset('asset/js/scripts.js')}}"></script>
 @stop
 
 @section('page_header')

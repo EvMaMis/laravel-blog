@@ -17,6 +17,7 @@ class User extends Authenticatable implements MustVerifyEmail
     const READER_ROLE = '0';
     const ADMIN_ROLE = '1';
 
+
     public static function getRoles() {
         return [
             self::READER_ROLE => 'Читатель',
