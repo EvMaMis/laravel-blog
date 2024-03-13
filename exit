@@ -1,0 +1,77 @@
+[33mcommit 14e606f738c135d15752bee24c93488e58d38fd4[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;32mposts-on-client-side[m[33m)[m
+Merge: 831a93d c623ee0
+Author: Ruslan Gavrilenko <98945283+EvMaMis@users.noreply.github.com>
+Date:   Tue Mar 12 23:29:15 2024 +0200
+
+    Merge pull request #2 from EvMaMis/client
+    
+    Created comments in user's profile
+
+[33mcommit c623ee0b8a4d96ae68f3e95c57319350e00dab3c[m[33m ([m[1;31morigin/client[m[33m)[m
+Author: EvMaMis <evmamis13@gmail.com>
+Date:   Tue Mar 12 23:28:32 2024 +0200
+
+    created showing, removing and editing comments in profile for user
+
+[33mcommit 1ed0661740a6f2b6589914f016515d1f07819904[m
+Author: EvMaMis <evmamis13@gmail.com>
+Date:   Tue Mar 12 20:52:14 2024 +0200
+
+    created personal page layout, fixed menu items for admin
+
+[33mcommit f16e5a0e83ea94906306a5f411322d674338ece3[m
+Author: EvMaMis <evmamis13@gmail.com>
+Date:   Tue Mar 12 16:52:40 2024 +0200
+
+    fixed navbar on main page
+
+[33mcommit 831a93dbdc44fd946f5b8af84af6143bd31ffe42[m
+Author: EvMaMis <evmamis13@gmail.com>
+Date:   Tue Mar 12 14:50:38 2024 +0200
+
+    smtp connected and user create transformed into job
+
+[33mcommit b0ff7ce23c14ff3a887f0b8fa74215a432943a2e[m
+Merge: c5af943 dd96791
+Author: Ruslan Gavrilenko <98945283+EvMaMis@users.noreply.github.com>
+Date:   Tue Mar 12 12:45:12 2024 +0200
+
+    Merge pull request #1 from EvMaMis/refactoring
+    
+    Created CRUD for users table in admin panel, refactored code
+
+[33mcommit dd967917601236d04e77cabc2250b109fd9ffbd6[m[33m ([m[1;31morigin/refactoring[m[33m)[m
+Author: EvMaMis <evmamis13@gmail.com>
+Date:   Tue Mar 12 12:44:19 2024 +0200
+
+    created users crud in admin panel
+
+[33mcommit 2a4eba219271483becc079ae438485ec261824fa[m
+Author: EvMaMis <evmamis13@gmail.com>
+Date:   Tue Mar 12 11:39:07 2024 +0200
+
+    refactored code, creating users functionality
+
+[33mcommit c5af94374c920765e2c4e2446591a113ba362689[m
+Author: EvMaMis <evmamis13@gmail.com>
+Date:   Mon Mar 11 17:03:53 2024 +0200
+
+    posts adding and editing in admin panel
+
+[33mcommit 064664c16959fb98b3be035e58f07f61728d79e6[m
+Author: EvMaMis <evmamis13@gmail.com>
+Date:   Mon Mar 11 11:29:33 2024 +0200
+
+    adding images for post
+
+[33mcommit 2e9ee19c150fed52df62a88e18ee6dad4cad2d9d[m
+Author: EvMaMis <evmamis13@gmail.com>
+Date:   Sun Mar 10 17:06:35 2024 +0200
+
+    added summernote plugin
+
+[33mcommit dd953155fb388e0505af65999de6e863ab332d19[m
+Author: EvMaMis <evmamis13@gmail.com>
+Date:   Sun Mar 10 16:26:58 2024 +0200
+
+    CRUD for tags and categories

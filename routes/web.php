@@ -15,7 +15,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['namespace' => 'App\\Http\\Controllers\\Main'], function () {
-    Route::get('/', 'IndexController');
+    Route::get('/', 'IndexController')->name('main.index');
+});
+
+Route::group(['namespace' => 'App\\Http\\Controllers\\Post', 'prefix'=>'posts'], function() {
+    Route::get('/', 'IndexController')->name('main.posts.index');
+    Route::get('/{post}', 'ShowController')->name('main.posts.show');
+
+    Route::group(['namespace' => 'Comment', 'prefix' => '/{post}/comments'], function() {
+        Route::post('/', 'StoreController')->name('post.comments.store');
+    });
+
+    Route::group(['namespace' => 'Like', 'prefix' => '/{post}/likes'], function() {
+        Route::post('/', 'StoreController')->name('post.likes.store');
+    });
+
 });
 
 Route::group(['namespace' => 'App\\Http\\Controllers\\Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']]   , function () {
@@ -77,4 +91,7 @@ Route::group(['namespace' => 'App\\Http\\Controllers\\Admin', 'prefix' => 'admin
 });
 
 Auth::routes(['verify'=>true]);
+
+
+
 

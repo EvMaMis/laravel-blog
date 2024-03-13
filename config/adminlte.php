@@ -313,7 +313,7 @@ return [
             'can' => 'admin'
 
         ],
-        ['header' => 'Админ панель'],
+        ['header' => 'Админ панель', 'can' => 'admin'],
         [
             'text' => 'Главная',
             'route' => 'admin.index',
