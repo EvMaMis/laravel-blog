@@ -19,9 +19,9 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($categories as $category)
+        @foreach($categories as $key=>$category)
             <tr>
-                <td class="col-1">{{$category->id}}</td>
+                <td class="col-1">{{$key+1}}</td>
                 <td class="col-6">{{$category->title}}</td>
                 <td class="col-3">{{$category->created_at}}</td>
                 <td class="col-1"><a href="{{route('admin.categories.show', $category)}}">

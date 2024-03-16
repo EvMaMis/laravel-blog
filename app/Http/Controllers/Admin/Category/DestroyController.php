@@ -9,6 +9,7 @@ class DestroyController extends Controller
 {
     public function __invoke(Category $category)
     {
+        dd($category);
         $category->delete();
         return redirect()->route('admin.categories.index');
     }

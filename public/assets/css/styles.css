@@ -10706,7 +10706,6 @@ header.masthead .site-heading .subheading {
     font-size: 1.5rem;
     font-weight: 300;
     line-height: 1.1;
-    display: block;
     margin-top: 0.625rem;
     font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
@@ -10805,4 +10804,19 @@ header.masthead .post-heading .meta a {
 .user-post-image img {
     height: auto;
     max-width: 100%;
+}
+
+.main-page-heading .h1 {
+    color: #fff;
+    font-size: 5rem;
+    /*font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";*/
+
+    font-family: "Lora",sans-serif;
+    font-weight: 700;
+
+}
+
+.main-page-heading span {
+    color: rgba(255, 255, 255, 0.64);
+    font-size: 1rem;
 }
