@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $categories = Category::all();
+        $categories = Category::orderBy('title', 'asc')->paginate(10);
         return view('main.categories.index', compact('categories'));
     }
 }
