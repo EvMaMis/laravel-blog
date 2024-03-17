@@ -24,15 +24,18 @@
                     <div class="post-heading">
                         <h1>{{$post->title}}</h1>
                         <h2 class="subheading">{{$post->category->title}}</h2>
-                        <span class="meta d-flex align-items-center">
-                                Опубликовано {{$date->translatedFormat('F')}} {{$date->day}}, {{$date->year}} • {{$date->format('H:i')}} • Комментарии: {{$post->comments->count()}} • @auth()
+                        <span class="meta d-flex align-items-center ">
+                                Опубликовано {{$date->translatedFormat('F')}} {{$date->day}}, {{$date->year}} • {{$date->format('H:i')}} • Комментарии: {{$post->comments->count()}} •
+                            @auth()
                                 <form action="{{route('post.likes.store', $post)}}" method="post">
                                 @csrf
                                     @method('post')
-                                <button type="submit" class="btn"><i class="text-white fa{{auth()->user()->likedPosts->contains($post->id) ? 's' : 'r'}} fa-heart"></i></button>
+                                <button type="submit" class="btn text-white" style="font-size: 16px"><i class="text-white fa{{auth()->user()->likedPosts->contains($post->id) ? 's' : 'r'}} fa-heart"></i> {{$post->liked_users_count}}</button>
                             </form>
                             @endauth
-
+                            @guest
+                                <i class=" far fa-heart"></i>{{$post->liked_users_count}}
+                            @endguest
                         </span>
                     </div>
                 </div>
