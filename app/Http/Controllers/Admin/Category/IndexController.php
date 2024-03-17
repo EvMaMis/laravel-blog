@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $categories = Category::all();
+        $categories = Category::with('posts')->get();
         return view('admin.categories.index', compact('categories'));
     }
 }

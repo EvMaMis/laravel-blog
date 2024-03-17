@@ -14,7 +14,7 @@
         <tr>
             <th class="col-1">ID</th>
             <th class="col-6">Название категории</th>
-            <th class="col-3">Дата создания</th>
+            <th class="col-3">Количество постов</th>
             <th class="col-3 text-center" colspan="3">Действия</th>
         </tr>
         </thead>
@@ -23,7 +23,7 @@
             <tr>
                 <td class="col-1">{{$key+1}}</td>
                 <td class="col-6">{{$category->title}}</td>
-                <td class="col-3">{{$category->created_at}}</td>
+                <td class="col-3">{{$category->posts->count()}}</td>
                 <td class="col-1"><a href="{{route('admin.categories.show', $category)}}">
                         <i class="text-center text-blue fa-solid fa-eye"></i></a></td>
                 <td class="col-1"><a href="{{route('admin.categories.edit', $category)}}">
