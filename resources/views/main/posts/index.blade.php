@@ -31,7 +31,7 @@
             @foreach($posts as $post)
                 <div class="col post">
                     <div class="user-post-image">
-                        <img class="img-fluid" src="{{'storage/' . $post->preview_image}}" alt="preview image">
+                        <img class="img-fluid" src="{{asset('storage/' . $post->preview_image)}}" alt="preview image">
                     </div>
                     <div class="user-post-category d-flex align-items-center justify-content-between">
                         <p class="h4" class="user-post-category-text">{{$post->category->title}}</p>
@@ -57,13 +57,13 @@
         <div class="d-flex justify-content-center mt-3">
             {{$posts->links()}}
         </div>
-        <div class="row row-cols-2">
+        <div class="row row-cols-2 justify-content-between">
             <div class="col">
                 <div class="row row-cols-1 row-cols-md-2">
                     @foreach($randomPosts as $post)
                         <div class="col post">
                             <div class="user-post-image">
-                                <img class="img-fluid" src="{{'storage/' . $post->preview_image}}" alt="preview image">
+                                <img class="img-fluid" src="{{asset('storage/' . $post->preview_image)}}" alt="preview image">
                             </div>
                             <div class="post-subtitle">
                                 <p class="h4" class="user-post-category-text">{{$post->category->title}}</p>
@@ -77,15 +77,23 @@
                 </div>
             </div>
             <div class="col">
-                <div class="top-heading">Лучшие посты</div>
-                <ol>
-                    @foreach($topPosts as $post)
-                        <li>
-                            <img class="img-thumbnail" style="width:25%;" src="{{'storage/' . $post->preview_image}}" alt="preview">
-                            <a href="{{route('main.posts.show', $post)}}">{{$post->title}}</a>
-                        </li>
-                    @endforeach
-                </ol>
+                <div class="">
+                    <div class="row">
+                        <div class="col-12 col-sm-8 col-lg-8">
+                            <h6 class="text-muted">Лучшие публикации</h6>
+                            <ol class="list-group">
+                            @foreach($topPosts as $post)
+                                <li class="row list-group-item d-flex justify-content-between align-items-center">
+                                    <a class="col-8" style="text-decoration: none;" href="{{route('main.posts.show', $post)}}"><span>{{$post->title}}</span></a>
+                                    <div class="col-4 image-parent">
+                                        <img src="{{asset('storage/' . $post->preview_image)}}" class="img-fluid" alt="quixote">
+                                    </div>
+                                </li>
+                            @endforeach
+                            </ol>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

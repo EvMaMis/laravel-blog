@@ -18,6 +18,11 @@ Route::group(['namespace' => 'App\\Http\\Controllers\\Main'], function () {
     Route::get('/', 'IndexController')->name('main.index');
 });
 
+Route::group(['namespace'=>'App\\Http\\Controllers\\Category', 'prefix'=>'categories'], function() {
+    Route::get('/', 'IndexController')->name('main.categories.index');
+    Route::get('/{category}', 'ShowController')->name('main.categories.show');
+});
+
 Route::group(['namespace' => 'App\\Http\\Controllers\\Post', 'prefix'=>'posts'], function() {
     Route::get('/', 'IndexController')->name('main.posts.index');
     Route::get('/{post}', 'ShowController')->name('main.posts.show');
