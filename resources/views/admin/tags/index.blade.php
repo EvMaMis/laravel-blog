@@ -12,18 +12,18 @@
     <table class="table col-12">
         <thead>
         <tr>
-            <th class="col-1">ID</th>
+            <th class="col-1">#</th>
             <th class="col-6">Название тега</th>
-            <th class="col-3">Дата создания</th>
+            <th class="col-3">Количество постов</th>
             <th class="col-3 text-center" colspan="3">Действия</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($tags as $tag)
+        @foreach($tags as $key=>$tag)
             <tr>
-                <td class="col-1">{{$tag->id}}</td>
+                <td class="col-1">{{$key+1}}</td>
                 <td class="col-6">{{$tag->title}}</td>
-                <td class="col-3">{{$tag->created_at}}</td>
+                <td class="col-3">{{$tag->posts->count()}}</td>
                 <td class="col-1"><a href="{{route('admin.tags.show', $tag)}}">
                         <i class="text-center text-blue fa-solid fa-eye"></i></a></td>
                 <td class="col-1"><a href="{{route('admin.tags.edit', $tag)}}">

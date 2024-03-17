@@ -12,7 +12,7 @@
     <table class="table col-12">
         <thead>
         <tr>
-            <th class="col-1">ID</th>
+            <th class="col-1">#</th>
             <th class="col-3">Имя пользователя</th>
             <th class="col-3">Адрес электронной почты</th>
             <th class="col-3">Роль</th>
@@ -20,9 +20,9 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($users as $user)
+        @foreach($users as $key=>$user)
             <tr>
-                <td class="col-1">{{$user->id}}</td>
+                <td class="col-1">{{$key+1}}</td>
                 <td class="col-3">{{$user->name}}</td>
                 <td class="col-3">{{$user->email}}</td>
                 <td class="col-3">

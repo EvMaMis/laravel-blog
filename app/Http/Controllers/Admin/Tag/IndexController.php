@@ -9,7 +9,7 @@ class IndexController extends Controller
 {
     public function __invoke()
     {
-        $tags = Tag::all();
+        $tags = Tag::with('posts')->get();
         return view('admin.tags.index', compact('tags'));
     }
 }

@@ -12,16 +12,16 @@
     <table class="table col-12">
         <thead>
         <tr>
-            <th class="col-1">ID</th>
+            <th class="col-1">#</th>
             <th class="col-6">Название тега</th>
             <th class="col-3">Дата создания</th>
             <th class="col-3 text-center" colspan="3">Действия</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($posts as $post)
+        @foreach($posts as $key=>$post)
             <tr>
-                <td class="col-1">{{$post->id}}</td>
+                <td class="col-1">{{$key+1}}</td>
                 <td class="col-6">{{$post->title}}</td>
                 <td class="col-3">{{$post->created_at}}</td>
                 <td class="col-1"><a href="{{route('admin.posts.show', $post)}}">

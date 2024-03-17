@@ -12,7 +12,7 @@
     <table class="table col-12">
         <thead>
         <tr>
-            <th class="col-1">ID</th>
+            <th class="col-1">#</th>
             <th class="col-6">Название категории</th>
             <th class="col-3">Количество постов</th>
             <th class="col-3 text-center" colspan="3">Действия</th>
