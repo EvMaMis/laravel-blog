@@ -16,13 +16,13 @@
 
 
 @section('page_header')
-    <header class="masthead" style="background-image: url('{{asset('assets/assets/img/home-bg.jpg')}}')">
+    <header class="masthead" style="background-image: url('{{asset('assets/assets/img/home-bg.jpg')}}'); margin-top: -20px;">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="text-center main-page-heading">
                         <div class="h1">Забудь о своих проблемах</div>
-                        <span class="subheading">Время сделать перерыв</span>
+                        <span class="subheading" style="font-size: 2rem;">Время сделать перерыв</span>
                     </div>
                 </div>
             </div>
